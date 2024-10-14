@@ -1,0 +1,34 @@
+.more-games {
+    margin-top: 5rem;
+}
+
+
+#games-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+
+.game {
+    width: 200px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+    padding: 10px;
+}
+
+.game img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 2px 2px 12px rgba(0,0,0, 0.5);
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+

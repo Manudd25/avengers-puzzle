@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avengers Puzzle</title>
+    <link rel="stylesheet" href="puzzle.css">
+    <link rel="stylesheet" href="api-games.css">
+
+  
+</head>
+
+
+<body>
+    <img id="avg-title" src="./images/avengers-title.png" alt="avengers-title">
+
+
+    <div id="board"></div>
+
+
+    <div id="stats-container">
+        <div>Time left: <span id="timer">5:00</span></div>
+        <div>Turns: <span id="turns">0</span></div>
+    </div>
+  
+    
+
+    <div id="pieces"></div>
+
+    <button id="startAgain">Start Again</button>
+
+    <button onclick="showHint()">Hint</button>
+
+    <div class="score-container">
+        <h2>Leader Board</h2>
+    
+        <table id="leaderboard">
+            <thead>
+            <tr>
+                <th>Rank</th>
+                <th>Player</th>
+                <th>Moves</th>
+                <th>Time</th>
+            </tr>
+        </thead>
+    
+        <tbody>
+            <!--players' score-->
+        </tbody>
+        
+        </table>
+
+        <button id="clearLastPlayer">Clear last player</button>
+    </div>
+    
+    <h2 class="more-games">If you enjoyed this game, you might want to check these:</h2>
+
+    <div id="games-container">
+
+    </div>
+
+
+<script src="puzzle.js"></script>
+<script src="api-games.js"></script>
+</body>
+</html>
