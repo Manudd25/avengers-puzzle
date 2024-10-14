@@ -7,6 +7,10 @@ let turns = 0;
 let countdown;
 let timeLeft;
 
+let timerStarted = false;
+let timerInterval; 
+let timeElapsed = 0;
+
 
 window.onload = function() {
     initializeGame();
@@ -105,9 +109,12 @@ function createBoard() {
 // Timer
 
 function startTimer() {
-let timerElement = document.getElementById("timer");
 
     countdown = setInterval(() => {
+        timeElapsed += 1; // increment time by 1 second
+
+        let timerElement = document.getElementById("timer");
+
         if(timeLeft <= 0) {
             clearInterval(countdown);
             alert("Time's up! Game over!");
@@ -121,9 +128,29 @@ let timerElement = document.getElementById("timer");
     }, 1000);
 }
 
+function stopTimer() {
+    clearInterval(timerInterval)
+}
+
+
+//function to handle the drag start 
+function handleDragStart(event) {
+
+    //Start timer only on the first drag
+    if(!timerStarted) {
+        startTimer()
+        timerStarted = true;
+    }
+}
+
+const draggableTiles = document.querySelectorAll('.tile');
+
+draggableTiles.forEach(tile => {
+    tile.addEventListener('dragstart', handleDragStart)
+})
+
 
 //Drag tiles 
-
 function dragStart() {
     currTile = this; // this refers to image that was clicked on for dragging
 }
