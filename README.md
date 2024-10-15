@@ -5,11 +5,13 @@ This project is a 5x5 tile-based sliding puzzle game where the objective is to r
 Key Features:
 
 
+
 Drag-and-Drop Puzzle Tiles:
 
 Players can drag tiles and drop them into empty spaces to swap positions with the blank tile.
 Tiles are shuffled randomly at the beginning of the game.
 Drag-and-drop functionality is implemented using JavaScript event listeners (dragstart, dragend, drop).
+
 
 
 Timer and Turns Counter:
@@ -24,14 +26,17 @@ The leaderboard is stored in local storage, showing the top 5 scores.
 Players can also clear the last player's score.
 
 
+
 Hints:
 
 A hint system highlights the correctly placed tiles in green for a short duration, helping the player track progress.
 
 
+
 Game Reset:
 
 The game can be restarted at any point, which resets the timer, the turns counter, and shuffles the puzzle pieces again.
+
 
 
 Technologies Used:
