@@ -48,3 +48,5 @@ Shuffling and managing the puzzle tiles.
 Drag-and-drop functionality.
 Timer and turns tracking.
 Storing and updating the leaderboard in local storage.
+
+Have a look at the puzzle game and have fun! https://manudd25.github.io/avengers-puzzle/
