@@ -265,7 +265,7 @@ function saveScore(playerName, moves, timeTaken) {
     });
 
     //Sorting leaderBoard by moves 
-    leaderBoard.sort((a, b) => b.moves - a.moves);
+    leaderBoard.sort((a, b) => a.moves - b.moves);
 
     //Keeping only top 5 scores
     leaderBoard = leaderBoard.slice(0, 10);
@@ -316,8 +316,14 @@ function clearLastPlayer() {
 
     //Checking if there are any entries 
     if(leaderBoard.length > 0) {
-        leaderBoard.pop();
 
+        const isConfirmed = confirm("Are you sure you want to delete the last player?");
+
+        if (isConfirmed) {
+            // if confirmed, deleting the last player
+            leaderBoard.pop();
+        }
+       
         //Save the updated leaderboard back to localStorage 
         localStorage.setItem("leaderBoard", JSON.stringify(leaderBoard));
 

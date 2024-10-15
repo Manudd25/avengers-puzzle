@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
@@ -7,6 +11,19 @@ body {
     background-size:cover;
     color: white;
     text-shadow: 2px 2px 2px black;  
+}
+
+.navbar {
+    position: absolute;
+    right: 10px;
+    background-color: rgb(7, 110, 206);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.navbar a {
+    margin-left: 15px; 
+    text-decoration: none;
 }
 
 
@@ -115,11 +132,12 @@ button:hover {
 
 .score-container h2 {
     background-color: navy;
-    margin-bottom: 5rem;
+    margin-bottom: 10rem;
+    padding: 8px;
 }
 
 #leaderboard {
-    width: 25%;
+    width: 80%;
     margin: 0 auto; 
     border-collapse: collapse;
 }
@@ -133,14 +151,15 @@ button:hover {
 #leaderboard th {
     background-color: rgb(7, 110, 206);
     color: white;
+    font-size: 20px;
 }
 
 #leaderboard tr:nth-child(even) {
-    background-color: rgb(99, 170, 236);
+    background-color: rgba(99, 170, 236, 0.808);
 }
 
 #leaderboard tr:nth-child(odd) {
-    background-color: rgb(51, 150, 243);
+    background-color: rgba(51, 150, 243, 0.808);
 }
 
 #leaderboard tr:hover {
@@ -149,7 +168,7 @@ button:hover {
 
 #clearLastPlayer {
     width: 10rem;
-    margin-bottom: 8rem;
+    margin-bottom: 12rem;
 }
 
 

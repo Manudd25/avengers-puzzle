@@ -54,3 +54,33 @@ function displayGames(games) {
 }
 
 fetchGames();
+
+
+
+
+// Back to the top 
+
+const backToTop = document.getElementById("backToTop");
+
+
+//based on the scroll position, the button is being showed or hidden
+window.onscroll = function() {
+  if(document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    backToTop.style.display = "block"; //showing the button when scrolling down
+    backToTop.style.position = "fixed";
+    backToTop.style.left = "20px";
+    backToTop.style.bottom = "20px";
+
+  } else {
+    backToTop.style.display = "none"; // hiding it when at the top
+  }
+};
+
+//smooth scroll to the top 
+backToTop.addEventListener("click", function(event) {
+  event.preventDefault();
+  window.scrollTo({
+    top: 0, 
+    behavior: 'smooth'
+  })
+})

@@ -1,72 +1,91 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Avengers Puzzle</title>
-    <link rel="stylesheet" href="puzzle.css">
-    <link rel="stylesheet" href="api-games.css">
+    <link rel="stylesheet" href="puzzle.css" />
+    <link rel="stylesheet" href="api-games.css" />
+  </head>
 
-  
-</head>
-
-
-<body>
-
-    <div class="title">
-    <img id="avg-title" src="./images/avengers-title.png" alt="avengers-title"> <img src="./images/puzzle-piece.png" width="150px" height="150px" alt="puzzle-piece">
+  <body>
+    <!--Navbar-->
+    <div class="navbar">
+      <a href="#avengers-puzzle">Avengers Puzzle</a>
+      <a href="#leaderboard">Leaderboard</a>
+      <a href="#moregames">More Games</a>
     </div>
 
+    <!--Avengers logo and title-->
+    <section id="avengers-puzzle">
+      <div class="title">
+        <img
+          id="avg-title"
+          src="./images/avengers-title.png"
+          alt="avengers-title"
+        />
+        <img
+          src="./images/puzzle-piece.png"
+          width="150px"
+          height="150px"
+          alt="puzzle-piece"
+        />
+      </div>
 
-    <div id="board"></div>
+      <!--puzzle board-->
+      <div id="board"></div>
 
-
-    <div id="stats-container">
+      <!--timer and turns count-->
+      <div id="stats-container">
         <div>
-            <span class="label">Time Left:</span><span id="timer">5:00</span></div>
-        <div>
-            <span class="label">Turns:</span><span id="turns">0</span></div>
-    </div>
-  
-    
+          <span class="label">Time Left:</span><span id="timer">5:00</span>
+        </div>
+        <div><span class="label">Turns:</span><span id="turns">0</span></div>
+      </div>
 
-    <div id="pieces"></div>
+      <!--board with puzzle pieces-->
+      <div id="pieces"></div>
 
-    <button id="startAgain">Start Again</button>
+      <button id="startAgain">Start Again</button>
 
-    <button onclick="showHint()">Hint</button>
+      <button onclick="showHint()">Hint</button>
+    </section>
 
-    <div class="score-container">
+    <!--Leader board-->
+    <section id="leaderboard">
+      <div class="score-container">
         <h2>Leader Board</h2>
-    
+
         <table id="leaderboard">
-            <thead>
+          <thead>
             <tr>
-                <th>Rank</th>
-                <th>Player</th>
-                <th>Moves</th>
-                <th>Time</th>
+              <th>Rank</th>
+              <th>Player</th>
+              <th>Moves</th>
+              <th>Time</th>
             </tr>
-        </thead>
-    
-        <tbody>
+          </thead>
+
+          <tbody>
             <!--players' score-->
-        </tbody>
-        
+          </tbody>
         </table>
 
         <button id="clearLastPlayer">Clear Last Player</button>
-    </div>
-    
-    <h2 class="more-games">Explore More Games:</h2>
+      </div>
+    </section>
 
-    <div id="games-container">
+    <!--Other games fetched from Rawg api-->
+    <section id="moregames">
+      <h2 class="more-games">Explore More Games:</h2>
 
-    </div>
+      <div id="games-container"></div>
 
+      <a id="backToTop" href="#">Back to Top&uarr;</a>
+    </section>
 
-<script src="puzzle.js"></script>
-<script src="rawg-api-games.js"></script>
-</body>
+    <script src="puzzle.js"></script>
+    <script src="rawg-api-games.js"></script>
+  </body>
 </html>
