@@ -13,15 +13,20 @@
 
 
 <body>
-    <img id="avg-title" src="./images/avengers-title.png" alt="avengers-title">
+
+    <div class="title">
+    <img id="avg-title" src="./images/avengers-title.png" alt="avengers-title"> <img src="./images/puzzle-piece.png" width="150px" height="150px" alt="puzzle-piece">
+    </div>
 
 
     <div id="board"></div>
 
 
     <div id="stats-container">
-        <div>Time left: <span id="timer">5:00</span></div>
-        <div>Turns: <span id="turns">0</span></div>
+        <div>
+            <span class="label">Time Left:</span><span id="timer">5:00</span></div>
+        <div>
+            <span class="label">Turns:</span><span id="turns">0</span></div>
     </div>
   
     
@@ -51,7 +56,7 @@
         
         </table>
 
-        <button id="clearLastPlayer">Clear last player</button>
+        <button id="clearLastPlayer">Clear Last Player</button>
     </div>
     
     <h2 class="more-games">Explore More Games:</h2>

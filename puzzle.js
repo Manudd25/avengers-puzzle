@@ -148,7 +148,6 @@ function handleDragStart(event) {
         timerStarted = true;
     }
     currTile = event.target;
-    currTile.style.opacity = "0.5";
 }
 
 
@@ -169,8 +168,6 @@ function dragDrop() {
 }
 
 function dragEnd() {
-    
-    currTile.style.opacity = "1";
 
     if(currTile.src.includes("blank")) {
         return;
@@ -268,10 +265,10 @@ function saveScore(playerName, moves, timeTaken) {
     });
 
     //Sorting leaderBoard by moves 
-    leaderBoard.sort((a, b) => a.moves - b.moves);
+    leaderBoard.sort((a, b) => b.moves - a.moves);
 
     //Keeping only top 5 scores
-    leaderBoard = leaderBoard.slice(0, 5);
+    leaderBoard = leaderBoard.slice(0, 10);
 
     // Saving back to localStorage
     localStorage.setItem("leaderBoard", JSON.stringify(leaderBoard));

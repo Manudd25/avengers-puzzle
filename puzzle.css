@@ -9,6 +9,7 @@ body {
     text-shadow: 2px 2px 2px black;  
 }
 
+
 #avg-title {
     padding: 1rem;
 }
@@ -86,20 +87,35 @@ button:hover {
 
 #stats-container div {
     font-size: 1.5rem;
+    font-weight: bolder;
+    margin: 10px;
+
 }
 
 #timer, #turns {
-    background-color: rgb(0, 0, 0, 0.7);
+    background-color: rgba(2, 79, 141, 0.7);
     color: white;
     padding: 10px; 
     border-radius: 5px;
     margin: 0 10px; 
     font-size: 1.5rem;
     text-shadow: 1px 1px 2px black;
+    border: 1px solid black;
+}
+
+.label {
+    background-color: rgba(2, 79, 141, 0.7);
+    padding: 10px;
+    border: 1px solid black;
 }
 
 .score-container {
-    margin-top: 5rem;
+    margin-top: 10rem;
+}
+
+.score-container h2 {
+    background-color: navy;
+    margin-bottom: 5rem;
 }
 
 #leaderboard {
@@ -123,12 +139,17 @@ button:hover {
     background-color: rgb(99, 170, 236);
 }
 
+#leaderboard tr:nth-child(odd) {
+    background-color: rgb(51, 150, 243);
+}
+
 #leaderboard tr:hover {
     background-color: #ddd;
 }
 
 #clearLastPlayer {
     width: 10rem;
+    margin-bottom: 8rem;
 }
 
 
