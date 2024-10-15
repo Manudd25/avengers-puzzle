@@ -9,7 +9,7 @@ let timeLeft;
 
 let timerStarted = false;
 let timerInterval; 
-let timeElapsed = 0;
+let timeElapsed = 0; 
 
 
 window.onload = function() {
@@ -24,7 +24,9 @@ window.onload = function() {
 //Initialize the game 
 function initializeGame() {
     turns = 0;
-    timeLeft = 300;
+    timeLeft = 300; // 5 minutes
+    timerStarted = false; 
+
     document.getElementById("turns").innerText = turns;
 
 //Resetting timer
@@ -35,11 +37,14 @@ timerElement.innerText = "5:00";
 document.getElementById("board").innerHTML = "";
 document.getElementById("pieces").innerHTML = "";
 
-//Create the board and pieces again 
+//Clear any existing timer
+if (countdown) {
+    clearInterval(countdown)
+}
+
+//Creating the board and pieces again 
 createBoard();
 createPieces();
-
-startTimer();
 updateLeaderBoard();
 
 }
@@ -56,7 +61,7 @@ function createBoard() {
             tile.draggable = true;
 
             // Drag and drop functionality
-            tile.addEventListener("dragstart", dragStart); // click on image to drag
+            tile.addEventListener("dragstart", handleDragStart); // click on image to drag
             tile.addEventListener("dragover",dragOver); // drag an image
             tile.addEventListener("dragenter", dragEnter); // dragging an image into another one
             tile.addEventListener("dragleave", dragLeave); // dragging an image away from another one
@@ -85,15 +90,16 @@ function createBoard() {
         [pieces[i], pieces[j]] = [pieces[j], pieces[i]];
     }
 
+    //adding the pieces to the DOM
     for (let i = 0; i < pieces.length; i++) {
         let tile = document.createElement("img");
         tile.src = "./images/" + pieces[i] + ".jpg";
+        tile.draggable = true;
         
-        
-
-
+            
         // Drag and drop functionality
-        tile.addEventListener("dragstart", dragStart); // click on image to drag
+    
+        tile.addEventListener("dragstart", handleDragStart); // click on image to drag
         tile.addEventListener("dragover",dragOver); // drag an image
         tile.addEventListener("dragenter", dragEnter); // dragging an image into another one
         tile.addEventListener("dragleave", dragLeave); // dragging an image away from another one
@@ -129,7 +135,7 @@ function startTimer() {
 }
 
 function stopTimer() {
-    clearInterval(timerInterval)
+    clearInterval(countdown); // Clear the countdown interval
 }
 
 
@@ -141,19 +147,10 @@ function handleDragStart(event) {
         startTimer()
         timerStarted = true;
     }
+    currTile = event.target;
+    currTile.style.opacity = "0.5";
 }
 
-const draggableTiles = document.querySelectorAll('.tile');
-
-draggableTiles.forEach(tile => {
-    tile.addEventListener('dragstart', handleDragStart)
-})
-
-
-//Drag tiles 
-function dragStart() {
-    currTile = this; // this refers to image that was clicked on for dragging
-}
 
 function dragOver(e) {
     e.preventDefault(); // it allows the image to be dropped
@@ -172,6 +169,9 @@ function dragDrop() {
 }
 
 function dragEnd() {
+    
+    currTile.style.opacity = "1";
+
     if(currTile.src.includes("blank")) {
         return;
     }
